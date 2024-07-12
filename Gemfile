@@ -45,8 +45,8 @@ gem "bootsnap", require: false
 gem "rack-cors"
 
 # GraphQL
-gem "graphql", "2.1.3"
-gem "apollo_upload_server", "2.1.5"
+gem "graphql"
+gem "apollo_upload_server"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
