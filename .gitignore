@@ -34,3 +34,27 @@
 
 /app/assets/builds/*
 !/app/assets/builds/.keep
+
+.DS_Store
+/dist
+node_modules
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor directories and files
+# Ignore editor config
+.idea/
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+.idea/notarial-web-page.iml
+.idea/notarial-web-page.iml
+/.idea

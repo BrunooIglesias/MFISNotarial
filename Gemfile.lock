@@ -75,6 +75,9 @@ GEM
       minitest (>= 5.1)
       mutex_m
       tzinfo (~> 2.0)
+    apollo_upload_server (2.1.5)
+      actionpack (>= 6.1.6)
+      graphql (>= 1.8)
     base64 (0.2.0)
     bigdecimal (3.1.8)
     bootsnap (1.18.3)
@@ -95,6 +98,8 @@ GEM
     erubi (1.13.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
+    graphql (2.1.3)
+      racc (~> 1.4)
     i18n (1.14.5)
       concurrent-ruby (~> 1.0)
     io-console (0.7.2)
@@ -143,6 +148,8 @@ GEM
       nio4r (~> 2.0)
     racc (1.8.0)
     rack (3.1.6)
+    rack-cors (2.0.2)
+      rack (>= 2.0.0)
     rack-session (2.0.0)
       rack (>= 3.0.0)
     rack-test (2.1.0)
@@ -182,6 +189,10 @@ GEM
     rake (13.2.1)
     rdoc (6.7.0)
       psych (>= 4.0.0)
+    redis (5.2.0)
+      redis-client (>= 0.22.0)
+    redis-client (0.22.2)
+      connection_pool
     reline (0.5.9)
       io-console (~> 0.5)
     sprockets (4.2.1)
@@ -223,12 +234,16 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  apollo_upload_server
   bootsnap
   debug
   dotenv-rails
+  graphql
   pg (~> 1.2)
   puma (>= 5.0)
+  rack-cors
   rails (~> 7.1.3, >= 7.1.3.4)
+  redis (>= 4.0.1)
   sprockets-rails
   tailwindcss-rails
   tzinfo-data
