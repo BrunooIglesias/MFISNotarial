@@ -4,6 +4,7 @@ import { provideApollo } from './boot/apollo';
 import { Quasar } from 'quasar'
 import quasarUserOptions from './quasar-user-options'
 import 'quasar/src/css/index.sass'
+import './assets/tailwind.css'
 
 const app = createApp({
     setup() {
