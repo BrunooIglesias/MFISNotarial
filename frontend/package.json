@@ -1,10 +1,9 @@
 {
   "name": "frontend",
   "version": "0.0.1",
-  "description": "Frontend for MFISNotarial",
-  "productName": "MFISNotarial",
-  "author": "Bruno Silva <silva.bruno292@gmail.com>",
   "private": true,
+  "description": "Frontend for MFISNotarial",
+  "author": "Bruno Silva <silva.bruno292@gmail.com>",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -12,9 +11,11 @@
   },
   "dependencies": {
     "@apollo/client": "^3.10.8",
+    "@quasar/extras": "^1.0.0",
     "@vue/apollo-composable": "^4.0.2",
     "core-js": "^3.8.3",
     "graphql": "^16.9.0",
+    "quasar": "^2.16.0",
     "vue": "^3.2.13",
     "vue-apollo": "^3.0.0-alpha.3"
   },
@@ -25,7 +26,10 @@
     "@vue/cli-plugin-eslint": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
     "eslint": "^7.32.0",
-    "eslint-plugin-vue": "^8.0.3"
+    "eslint-plugin-vue": "^8.0.3",
+    "sass": "^1.77.8",
+    "sass-loader": "^12.0.0",
+    "vue-cli-plugin-quasar": "~5.1.0"
   },
   "eslintConfig": {
     "root": true,
@@ -46,5 +50,6 @@
     "last 2 versions",
     "not dead",
     "not ie 11"
-  ]
+  ],
+  "productName": "MFISNotarial"
 }
