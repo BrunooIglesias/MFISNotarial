@@ -58,3 +58,4 @@ pnpm-debug.log*
 .idea/notarial-web-page.iml
 .idea/notarial-web-page.iml
 /.idea
+*.iml

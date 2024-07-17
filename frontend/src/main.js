@@ -5,6 +5,7 @@ import { Quasar } from 'quasar'
 import quasarUserOptions from './quasar-user-options'
 import 'quasar/src/css/index.sass'
 import './assets/tailwind.css'
+import router from './router'
 
 const app = createApp({
     setup() {
@@ -14,5 +15,5 @@ const app = createApp({
 });
 
 app.use(Quasar, quasarUserOptions)
+app.use(router)
 app.mount('#app');
-
