@@ -6,6 +6,7 @@ import quasarUserOptions from './quasar-user-options'
 import 'quasar/src/css/index.sass'
 import './assets/tailwind.css'
 import router from './router'
+import './styles/global.scss';
 
 const app = createApp({
     setup() {
