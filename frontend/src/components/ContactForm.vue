@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white text-black shadow-md rounded-lg p-6 transition-opacity duration-700 ease-in-out" :class="{ 'opacity-100': showForm, 'opacity-0': !showForm }" @mouseover="showForm = true">
+  <div class="bg-white text-black shadow-md rounded-lg p-6 transition-opacity duration-1000 ease-in-out opacity-0" ref="formElement">
     <q-form @submit="onSubmit">
       <q-input filled v-model="name" label="Nombre" required class="mb-4 rounded-lg" />
       <q-input filled v-model="email" label="Email" type="email" required class="mb-4 rounded-lg" />
@@ -11,14 +11,30 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 
 const name = ref('');
 const email = ref('');
 const phone = ref('');
 const message = ref('');
 
-const showForm = ref(false);
+const formElement = ref<HTMLElement | null>(null);
+
+onMounted(() => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('opacity-100');
+      }
+    });
+  }, {
+    threshold: 0.1,
+  });
+
+  if (formElement.value) {
+    observer.observe(formElement.value);
+  }
+});
 
 const onSubmit = () => {
   console.log({
