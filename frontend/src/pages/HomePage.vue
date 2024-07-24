@@ -11,7 +11,7 @@
         <img src="https://via.placeholder.com/600x400" alt="Mary Iglesias - Escribana Pública" class="rounded-lg shadow-lg" />
       </div>
     </div>
-    <div id="contact-form" class="w-full text-center mt-16">
+    <div id="contact-form" ref="contactForm" class="w-full text-center mt-16">
       <h2 class="text-2xl font-semibold mb-4">Contáctate con Nosotros</h2>
       <ContactForm />
     </div>
@@ -19,12 +19,14 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue';
 import ContactForm from '../components/ContactForm.vue';
 
+const contactForm = ref<HTMLElement | null>(null);
+
 const scrollToForm = () => {
-  const formSection = document.getElementById('contact-form');
-  if (formSection) {
-    formSection.scrollIntoView({ behavior: 'smooth' });
+  if (contactForm.value) {
+    contactForm.value.scrollIntoView({ behavior: 'smooth' });
   }
 };
 </script>

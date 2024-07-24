@@ -13,10 +13,11 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue';
-import { useRouter } from 'vue-router';
+import { ref, onMounted, onUnmounted, nextTick } from 'vue';
+import { useRouter, useRoute } from 'vue-router';
 
 const router = useRouter();
+const route = useRoute();
 const hasScrolled = ref(false);
 
 const handleScroll = () => {
@@ -40,20 +41,21 @@ const navigateToExperience = () => {
 };
 
 const handleContactClick = () => {
-  if (router.currentRoute.value.path !== '/') {
+  if (route.path !== '/') {
     router.push('/').then(() => {
-      setTimeout(() => {
-        const formSection = document.getElementById('contact-form');
-        if (formSection) {
-          formSection.scrollIntoView({ behavior: 'smooth' });
-        }
-      }, 500); // Adjust this delay if needed
+      nextTick(() => {
+        scrollToForm();
+      });
     });
   } else {
-    const formSection = document.getElementById('contact-form');
-    if (formSection) {
-      formSection.scrollIntoView({ behavior: 'smooth' });
-    }
+    scrollToForm();
+  }
+};
+
+const scrollToForm = () => {
+  const formSection = document.getElementById('contact-form');
+  if (formSection) {
+    formSection.scrollIntoView({ behavior: 'smooth' });
   }
 };
 </script>
