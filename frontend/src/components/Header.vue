@@ -9,12 +9,3 @@
 
 <script setup lang="ts">
 </script>
-
-<style scoped>
-.bg-dark {
-  background-color: #333;
-}
-.text-white {
-  color: #fff;
-}
-</style>
