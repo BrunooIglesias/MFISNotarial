@@ -1,15 +1,16 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    './src/**/*.{vue,js,ts,jsx,tsx}',
-    './node_modules/quasar/src/**/*.sass'
-  ],
+  purge: ['./src/**/*.{vue,js,ts,jsx,tsx}', './public/index.html'],
+  darkMode: false,
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'primary': '#6B21A8',
+        'primary-dark': '#5B21B6',
+      },
+    },
   },
   variants: {
     extend: {},
   },
   plugins: [],
 }
-
