@@ -1,8 +1,0 @@
-{
-  "devDependencies": {
-    "@types/node": "^20.14.10",
-    "@types/webpack-env": "^1.18.5",
-    "@vue/cli-plugin-typescript": "^5.0.8",
-    "typescript": "^5.5.3"
-  }
-}
