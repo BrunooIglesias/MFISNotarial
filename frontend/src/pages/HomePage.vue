@@ -11,7 +11,7 @@
         <img src="https://via.placeholder.com/600x400" alt="Mary Iglesias - Escribana Pública" class="rounded-lg shadow-lg" />
       </div>
     </div>
-    <div id="contact-form" ref="contactForm" class="w-full text-center mt-16 opacity-0 transition-opacity duration-1000">
+    <div id="contact-form" ref="contactForm" class="w-full text-center mt-16 opacity-0 transition-opacity duration-1000 ease-in-out">
       <h2 class="text-2xl font-semibold mb-4">Contáctate con Nosotros</h2>
       <ContactForm />
     </div>
