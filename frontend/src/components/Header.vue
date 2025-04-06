@@ -1,61 +1,41 @@
 <template>
-  <q-header :class="{'shadow-md': hasScrolled}" class="bg-white text-gray-900 fixed top-0 w-full z-50 transition-shadow duration-300">
-    <q-toolbar class="container mx-auto px-4 flex justify-between items-center py-2">
-      <div class="flex items-center space-x-4 cursor-pointer" @click="navigateHome">
-        <img src="logo-url.png" alt="MFISLogo" class="h-8 w-auto" />
+  <q-header elevated class="bg-white text-gray-900 fixed top-0 w-full z-50">
+    <q-toolbar class="container mx-auto px-4 flex justify-between items-center py-3">
+      <div class="flex items-center space-x-4">
+        <img :src="logo" alt="Logo" class="h-10" />
+        <span class="text-xl font-bold">Mary Iglesias Escribana Pública</span>
       </div>
-      <div class="flex items-center space-x-6">
-        <q-btn flat label="Sobre Mí" @click="navigateToExperience" class="text-purple-700 hover:text-purple-600" />
-        <q-btn label="Contáctese con Nosotros" class="bg-purple-600 text-white hover:bg-purple-700 font-bold py-2 px-4 rounded-md" @click="handleContactClick" />
+      <div class="hidden md:flex items-center space-x-6">
+        <q-btn flat label="Inicio" @click="navigateTo('home')" />
+        <q-btn flat label="Sobre Nosotros" @click="navigateTo('about')" />
+        <q-btn flat label="Servicios" @click="navigateTo('services')" />
+        <q-btn flat label="Testimonios" @click="navigateTo('testimonials')" />
       </div>
+      <q-btn
+          label="Contáctenos"
+          class="bg-purple-600 text-white hover:bg-purple-700 rounded-full px-4 py-2"
+          @click="scrollToContact"
+      />
     </q-toolbar>
   </q-header>
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted, nextTick } from 'vue';
-import { useRouter, useRoute } from 'vue-router';
-
+import { useRouter } from 'vue-router';
 const router = useRouter();
-const route = useRoute();
-const hasScrolled = ref(false);
+const logo = new URL('@/assets/notarial-logo.png', import.meta.url).href;
 
-const handleScroll = () => {
-  hasScrolled.value = window.scrollY > 0;
-};
-
-onMounted(() => {
-  window.addEventListener('scroll', handleScroll);
-});
-
-onUnmounted(() => {
-  window.removeEventListener('scroll', handleScroll);
-});
-
-const navigateHome = () => {
-  router.push('/');
-};
-
-const navigateToExperience = () => {
-  router.push('/about-us');
-};
-
-const handleContactClick = () => {
-  if (route.path !== '/') {
-    router.push('/').then(() => {
-      nextTick(() => {
-        scrollToForm();
-      });
-    });
+const navigateTo = (section: string) => {
+  if (section === 'home') {
+    router.push('/');
   } else {
-    scrollToForm();
+    const el = document.getElementById(section);
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
   }
 };
 
-const scrollToForm = () => {
-  const formSection = document.getElementById('contact-form');
-  if (formSection) {
-    formSection.scrollIntoView({ behavior: 'smooth' });
-  }
+const scrollToContact = () => {
+  const el = document.getElementById('contact');
+  if (el) el.scrollIntoView({ behavior: 'smooth' });
 };
 </script>
