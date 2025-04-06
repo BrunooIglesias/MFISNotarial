@@ -7,6 +7,7 @@ import 'quasar/src/css/index.sass'
 import './assets/tailwind.css'
 import router from './router/index.ts'
 import './styles/global.scss';
+import '@mdi/font/css/materialdesignicons.min.css'
 
 const app = createApp({
     setup() {

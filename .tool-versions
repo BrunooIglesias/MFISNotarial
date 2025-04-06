@@ -1,0 +1,2 @@
+ruby 3.2.3 --local
+nodejs 23.11.0
