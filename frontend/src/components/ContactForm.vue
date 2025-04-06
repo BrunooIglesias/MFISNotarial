@@ -1,6 +1,6 @@
 <template>
-  <form @submit.prevent="handleSubmit" class="space-y-8">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+  <form @submit.prevent="handleSubmit" class="space-y-6 sm:space-y-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
       <div class="space-y-2">
         <label for="name" class="block text-sm font-medium text-notarial-text">Nombre Completo</label>
         <div class="relative">
@@ -13,13 +13,13 @@
             id="name"
             v-model="form.name"
             type="text"
-            class="block w-full pl-10 pr-3 py-2.5 border border-notarial-text/20 rounded-xl bg-white/50 focus:ring-2 focus:ring-notarial-primary focus:border-transparent"
+            class="block w-full pl-10 pr-3 py-2 sm:py-2.5 border border-notarial-text/20 rounded-xl bg-white/50 focus:ring-2 focus:ring-notarial-primary focus:border-transparent text-sm sm:text-base"
             :class="{ 'border-red-500': errors.name }"
             placeholder="Ingrese su nombre completo"
             @input="validateName"
           />
         </div>
-        <p v-if="errors.name" class="mt-1 text-sm text-red-500">{{ errors.name }}</p>
+        <p v-if="errors.name" class="mt-1 text-xs sm:text-sm text-red-500">{{ errors.name }}</p>
       </div>
 
       <div class="space-y-2">
@@ -34,13 +34,13 @@
             id="email"
             v-model="form.email"
             type="email"
-            class="block w-full pl-10 pr-3 py-2.5 border border-notarial-text/20 rounded-xl bg-white/50 focus:ring-2 focus:ring-notarial-primary focus:border-transparent"
+            class="block w-full pl-10 pr-3 py-2 sm:py-2.5 border border-notarial-text/20 rounded-xl bg-white/50 focus:ring-2 focus:ring-notarial-primary focus:border-transparent text-sm sm:text-base"
             :class="{ 'border-red-500': errors.email }"
             placeholder="ejemplo@correo.com"
             @input="validateEmail"
           />
         </div>
-        <p v-if="errors.email" class="mt-1 text-sm text-red-500">{{ errors.email }}</p>
+        <p v-if="errors.email" class="mt-1 text-xs sm:text-sm text-red-500">{{ errors.email }}</p>
       </div>
     </div>
 
@@ -51,18 +51,18 @@
           id="message"
           v-model="form.message"
           rows="4"
-          class="block w-full px-3 py-2.5 border border-notarial-text/20 rounded-xl bg-white/50 focus:ring-2 focus:ring-notarial-primary focus:border-transparent resize-none"
+          class="block w-full px-3 py-2 sm:py-2.5 border border-notarial-text/20 rounded-xl bg-white/50 focus:ring-2 focus:ring-notarial-primary focus:border-transparent resize-none text-sm sm:text-base"
           :class="{ 'border-red-500': errors.message }"
           placeholder="Escriba su mensaje aquí..."
           @input="validateMessage"
         ></textarea>
       </div>
-      <p v-if="errors.message" class="mt-1 text-sm text-red-500">{{ errors.message }}</p>
+      <p v-if="errors.message" class="mt-1 text-xs sm:text-sm text-red-500">{{ errors.message }}</p>
     </div>
 
     <button
       type="submit"
-      class="w-full bg-gradient-to-r from-notarial-primary to-notarial-subtext text-white py-3 px-6 rounded-xl font-medium hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-notarial-primary disabled:opacity-50 disabled:cursor-not-allowed"
+      class="w-full bg-gradient-to-r from-notarial-primary to-notarial-subtext text-white py-2.5 sm:py-3 px-4 sm:px-6 rounded-xl font-medium text-sm sm:text-base hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-notarial-primary disabled:opacity-50 disabled:cursor-not-allowed"
       :disabled="!isFormValid"
     >
       Enviar Mensaje

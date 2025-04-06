@@ -1,41 +1,55 @@
 <template>
-  <section id="about" class="relative min-h-[calc(100vh-4rem)] bg-white flex items-center">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8 w-full">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <!-- Image section -->
-        <div class="relative">
-          <div class="relative overflow-hidden rounded-2xl shadow-lg">
-            <img 
-              :src="aboutImage" 
-              alt="Estudio Notarial" 
-              class="w-full h-auto object-cover"
-            />
+  <section id="about" class="relative min-h-[calc(100vh-4rem)] bg-notarial-bg flex items-center">
+    <div class="relative max-w-7xl mx-auto px-6 lg:px-8 w-full">
+      <div class="grid grid-cols-1 gap-16">
+        <div class="text-center">
+          <h2 class="text-3xl sm:text-4xl font-bold text-notarial-subtext mb-4">
+            Sobre Nosotros
+          </h2>
+          <div class="h-1 w-16 bg-notarial-primary rounded mx-auto"></div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-12">
+          <div class="bg-white p-6 sm:p-8 rounded-2xl border border-notarial-light hover:border-notarial-primary transition-all duration-300 shadow-lg hover:shadow-xl">
+            <div class="text-notarial-primary text-3xl sm:text-4xl mb-4">
+              <i class="fas fa-eye"></i>
+            </div>
+            <h3 class="text-xl sm:text-2xl font-semibold text-notarial-subtext mb-3 sm:mb-4">Nuestra Visión</h3>
+            <p class="text-sm sm:text-base text-notarial-text leading-relaxed">
+              Ser el referente en servicios notariales, destacando por nuestra excelencia, profesionalismo y compromiso con cada cliente.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 sm:p-8 rounded-2xl border border-notarial-light hover:border-notarial-primary transition-all duration-300 shadow-lg hover:shadow-xl">
+            <div class="text-notarial-primary text-3xl sm:text-4xl mb-4">
+              <i class="fas fa-bullseye"></i>
+            </div>
+            <h3 class="text-xl sm:text-2xl font-semibold text-notarial-subtext mb-3 sm:mb-4">Nuestra Misión</h3>
+            <p class="text-sm sm:text-base text-notarial-text leading-relaxed">
+              Brindar asesoramiento legal de excelencia, garantizando claridad y confianza en cada paso del proceso notarial.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 sm:p-8 rounded-2xl border border-notarial-light hover:border-notarial-primary transition-all duration-300 shadow-lg hover:shadow-xl">
+            <div class="text-notarial-primary text-3xl sm:text-4xl mb-4">
+              <i class="fas fa-handshake"></i>
+            </div>
+            <h3 class="text-xl sm:text-2xl font-semibold text-notarial-subtext mb-3 sm:mb-4">Nuestros Valores</h3>
+            <p class="text-sm sm:text-base text-notarial-text leading-relaxed">
+              Integridad, profesionalismo y dedicación son los pilares que guían nuestro trabajo diario y nuestra relación con los clientes.
+            </p>
           </div>
         </div>
 
-        <!-- Content section -->
-        <div class="space-y-6">
-          <div class="space-y-2">
-            <h2 class="text-3xl font-bold text-notarial-subtext">
-              Sobre Nosotros
-            </h2>
-            <div class="h-1 w-16 bg-notarial-primary rounded"></div>
-          </div>
-          
-          <p class="text-notarial-text text-lg leading-relaxed">
-            En Estudio Notarial, combinamos experiencia y dedicación para brindar asesoramiento legal de alta calidad. Nuestro equipo se compromete a garantizar claridad y confianza en cada paso.
-          </p>
-
-          <div class="flex items-center gap-4 pt-4">
-            <q-btn
-              label="Nuestros Servicios"
-              color="notarial-primary"
-              text-color="white"
-              unelevated
-              class="rounded-full px-6"
-              @click="scrollToServices"
-            />
-          </div>
+        <div class="text-center mt-8 sm:mt-12">
+          <q-btn
+            label="Conoce Nuestros Servicios"
+            color="notarial-primary"
+            text-color="white"
+            unelevated
+            class="rounded-full px-6 sm:px-8 py-2 sm:py-3 text-base sm:text-lg hover:scale-105 transition-transform duration-300"
+            @click="scrollToServices"
+          />
         </div>
       </div>
     </div>
@@ -72,13 +86,5 @@ const scrollToServices = () => {
     opacity: 1;
     transform: translateX(0);
   }
-}
-
-.animate-fade-in {
-  animation: fade-in 1s ease-out;
-}
-
-.animate-slide-in-right {
-  animation: slide-in-right 1s ease-out;
 }
 </style>
