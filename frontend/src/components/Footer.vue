@@ -2,7 +2,6 @@
   <footer class="bg-notarial-subtext text-notarial-bg">
     <div class="max-w-7xl mx-auto px-6 py-16">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-        <!-- Brand Section -->
         <div class="space-y-6">
           <div class="flex items-center">
             <img :src="logo" alt="Logo" class="h-12 w-auto" />
@@ -13,7 +12,6 @@
           </p>
         </div>
 
-        <!-- Quick Links -->
         <div class="space-y-4">
           <h3 class="text-lg font-semibold">Enlaces Rápidos</h3>
           <ul class="space-y-3">
@@ -44,7 +42,6 @@
           </ul>
         </div>
 
-        <!-- Contact Info -->
         <div class="space-y-4">
           <h3 class="text-lg font-semibold">Contacto</h3>
           <ul class="space-y-4">
@@ -55,7 +52,7 @@
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
               </div>
-              <span class="ml-3 text-notarial-bg/80">Colonia 1245, Ap 201, Montevideo (UY)</span>
+              <span class="ml-3 text-notarial-bg/80 whitespace-nowrap">Colonia 1245, Ap 201, Montevideo (UY)</span>
             </li>
             <li class="flex items-start">
               <div class="flex-shrink-0 w-5 h-5 mt-1">
@@ -76,7 +73,6 @@
           </ul>
         </div>
 
-        <!-- Social Media -->
         <div class="space-y-4">
           <h3 class="text-lg font-semibold">Síguenos</h3>
           <div class="flex space-x-4">

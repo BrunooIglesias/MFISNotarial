@@ -2,80 +2,168 @@
   <form @submit.prevent="handleSubmit" class="space-y-8">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       <div class="space-y-2">
-        <label class="block text-sm font-medium text-notarial-subtext">Nombre</label>
+        <label for="name" class="block text-sm font-medium text-notarial-text">Nombre Completo</label>
         <div class="relative">
           <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-            <svg class="h-5 w-5 text-notarial-text/40" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-              <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+            <svg class="h-5 w-5 text-notarial-text/50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
             </svg>
           </div>
           <input
+            id="name"
             v-model="form.name"
             type="text"
-            required
-            class="pl-10 w-full px-4 py-3 rounded-xl border border-notarial-text/20 bg-white/50 focus:border-notarial-primary focus:ring-2 focus:ring-notarial-primary/20 transition-all duration-200"
-            placeholder="Ingrese su nombre"
+            class="block w-full pl-10 pr-3 py-2.5 border border-notarial-text/20 rounded-xl bg-white/50 focus:ring-2 focus:ring-notarial-primary focus:border-transparent"
+            :class="{ 'border-red-500': errors.name }"
+            placeholder="Ingrese su nombre completo"
+            @input="validateName"
           />
         </div>
+        <p v-if="errors.name" class="mt-1 text-sm text-red-500">{{ errors.name }}</p>
       </div>
+
       <div class="space-y-2">
-        <label class="block text-sm font-medium text-notarial-subtext">Correo Electrónico</label>
+        <label for="email" class="block text-sm font-medium text-notarial-text">Correo Electrónico</label>
         <div class="relative">
           <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-            <svg class="h-5 w-5 text-notarial-text/40" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+            <svg class="h-5 w-5 text-notarial-text/50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
             </svg>
           </div>
           <input
+            id="email"
             v-model="form.email"
             type="email"
-            required
-            class="pl-10 w-full px-4 py-3 rounded-xl border border-notarial-text/20 bg-white/50 focus:border-notarial-primary focus:ring-2 focus:ring-notarial-primary/20 transition-all duration-200"
+            class="block w-full pl-10 pr-3 py-2.5 border border-notarial-text/20 rounded-xl bg-white/50 focus:ring-2 focus:ring-notarial-primary focus:border-transparent"
+            :class="{ 'border-red-500': errors.email }"
             placeholder="ejemplo@correo.com"
+            @input="validateEmail"
           />
         </div>
+        <p v-if="errors.email" class="mt-1 text-sm text-red-500">{{ errors.email }}</p>
       </div>
     </div>
+
     <div class="space-y-2">
-      <label class="block text-sm font-medium text-notarial-subtext">Mensaje</label>
+      <label for="message" class="block text-sm font-medium text-notarial-text">Mensaje</label>
       <div class="relative">
-        <div class="absolute top-3 left-3 pointer-events-none">
-          <svg class="h-5 w-5 text-notarial-text/40" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clip-rule="evenodd" />
-          </svg>
-        </div>
         <textarea
+          id="message"
           v-model="form.message"
-          required
           rows="4"
-          class="pl-10 w-full px-4 py-3 rounded-xl border border-notarial-text/20 bg-white/50 focus:border-notarial-primary focus:ring-2 focus:ring-notarial-primary/20 transition-all duration-200 resize-none"
+          class="block w-full px-3 py-2.5 border border-notarial-text/20 rounded-xl bg-white/50 focus:ring-2 focus:ring-notarial-primary focus:border-transparent resize-none"
+          :class="{ 'border-red-500': errors.message }"
           placeholder="Escriba su mensaje aquí..."
+          @input="validateMessage"
         ></textarea>
       </div>
+      <p v-if="errors.message" class="mt-1 text-sm text-red-500">{{ errors.message }}</p>
     </div>
-    <div class="flex justify-center">
-      <button
-        type="submit"
-        class="group relative w-full md:w-auto px-8 py-3 bg-notarial-primary text-white rounded-xl font-medium hover:bg-notarial-secondary transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
-      >
-        <span class="relative z-10">Enviar Mensaje</span>
-        <div class="absolute inset-0 bg-gradient-to-r from-notarial-primary to-notarial-secondary rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-      </button>
-    </div>
+
+    <button
+      type="submit"
+      class="w-full bg-gradient-to-r from-notarial-primary to-notarial-subtext text-white py-3 px-6 rounded-xl font-medium hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-notarial-primary disabled:opacity-50 disabled:cursor-not-allowed"
+      :disabled="!isFormValid"
+    >
+      Enviar Mensaje
+    </button>
   </form>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
+
 const form = ref({
   name: '',
   email: '',
-  message: '',
+  message: ''
 });
 
-const handleSubmit = () => {
-  console.log('Form submitted:', form.value);
-  form.value = { name: '', email: '', message: '' };
+const errors = ref({
+  name: '',
+  email: '',
+  message: ''
+});
+
+const sanitizeInput = (input: string): string => {
+  return input
+    .replace(/[<>]/g, '')
+    .replace(/[&]/g, '')
+    .replace(/[;]/g, '')
+    .trim();
+};
+
+const validateName = () => {
+  const name = sanitizeInput(form.value.name);
+  if (!name) {
+    errors.value.name = 'El nombre es requerido';
+  } else if (name.length < 2) {
+    errors.value.name = 'El nombre debe tener al menos 2 caracteres';
+  } else if (name.length > 50) {
+    errors.value.name = 'El nombre no puede exceder los 50 caracteres';
+  } else {
+    errors.value.name = '';
+  }
+  form.value.name = name;
+};
+
+const validateEmail = () => {
+  const email = sanitizeInput(form.value.email);
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  
+  if (!email) {
+    errors.value.email = 'El email es requerido';
+  } else if (!emailRegex.test(email)) {
+    errors.value.email = 'Por favor ingrese un email válido';
+  } else {
+    errors.value.email = '';
+  }
+  form.value.email = email;
+};
+
+const validateMessage = () => {
+  const message = form.value.message;
+  if (!message) {
+    errors.value.message = 'El mensaje es requerido';
+  } else if (message.length < 10) {
+    errors.value.message = 'El mensaje debe tener al menos 10 caracteres';
+  } else if (message.length > 1000) {
+    errors.value.message = 'El mensaje no puede exceder los 1000 caracteres';
+  } else {
+    errors.value.message = '';
+  }
+};
+
+const isFormValid = computed(() => {
+  return (
+    !errors.value.name &&
+    !errors.value.email &&
+    !errors.value.message &&
+    form.value.name &&
+    form.value.email &&
+    form.value.message
+  );
+});
+
+const handleSubmit = async () => {
+  validateName();
+  validateEmail();
+  validateMessage();
+
+  if (!isFormValid.value) {
+    return;
+  }
+
+  try {
+    console.log('Form submitted:', form.value);
+    
+    form.value = {
+      name: '',
+      email: '',
+      message: ''
+    };
+  } catch (error) {
+    console.error('Error submitting form:', error);
+  }
 };
 </script>
