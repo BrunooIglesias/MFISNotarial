@@ -1,8 +1,8 @@
 <template>
-  <section id="contact" class="py-20 bg-gradient-to-r from-purple-600 to-purple-800">
+  <section id="contact" class="py-20 bg-gradient-to-r from-notarial-text to-notarial-subtext">
     <div class="max-w-4xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center text-white mb-12">Contáctate con Nosotros</h2>
-      <div class="bg-white shadow-xl rounded-2xl p-10">
+      <h2 class="text-3xl font-bold text-center text-notarial-bg mb-12">Contáctate con Nosotros</h2>
+      <div class="bg-notarial-bg shadow-xl rounded-2xl p-10">
         <ContactForm />
       </div>
     </div>

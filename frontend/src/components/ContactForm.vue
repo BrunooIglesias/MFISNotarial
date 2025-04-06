@@ -1,36 +1,36 @@
 <template>
   <form @submit.prevent="handleSubmit" class="space-y-6">
     <div>
-      <label class="block text-gray-700">Nombre</label>
+      <label class="block text-notarial-text">Nombre</label>
       <input
           v-model="form.name"
           type="text"
           required
-          class="mt-1 w-full border-gray-300 rounded-md shadow-sm"
+          class="mt-1 w-full border border-notarial-text rounded-md shadow-sm"
       />
     </div>
     <div>
-      <label class="block text-gray-700">Correo Electrónico</label>
+      <label class="block text-notarial-text">Correo Electrónico</label>
       <input
           v-model="form.email"
           type="email"
           required
-          class="mt-1 w-full border-gray-300 rounded-md shadow-sm"
+          class="mt-1 w-full border border-notarial-text rounded-md shadow-sm"
       />
     </div>
     <div>
-      <label class="block text-gray-700">Mensaje</label>
+      <label class="block text-notarial-text">Mensaje</label>
       <textarea
           v-model="form.message"
           required
-          class="mt-1 w-full border-gray-300 rounded-md shadow-sm"
+          class="mt-1 w-full border border-notarial-text rounded-md shadow-sm"
       ></textarea>
     </div>
     <q-btn
         label="Enviar Mensaje"
         type="submit"
-        color="purple-600"
-        text-color="white"
+        color="notarial-primary"
+        text-color="notarial-bg"
         unelevated
         class="w-full py-3 rounded-full"
     />
