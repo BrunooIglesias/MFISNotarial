@@ -210,7 +210,7 @@ const handleSubmit = async () => {
     const sanitizedEmail = sanitizeInput(form.value.email);
     const sanitizedMessage = sanitizeInput(form.value.message);
 
-    await fetch('/contact_messages', {
+    await fetch(`${process.env.VUE_APP_API_URL}/contact_messages`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
