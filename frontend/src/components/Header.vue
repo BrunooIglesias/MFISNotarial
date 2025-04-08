@@ -74,7 +74,7 @@
 
         <q-separator class="my-4" />
 
-        <q-item clickable v-ripple @click="scrollToForm(); drawer = false" class="bg-notarial-primary text-notarial-bg rounded-lg my-2">
+        <q-item clickable v-ripple @click="navigateTo('contact-form'); drawer = false" class="bg-notarial-primary text-notarial-bg rounded-lg my-2">
           <q-item-section>Contáctenos</q-item-section>
         </q-item>
 
@@ -129,30 +129,6 @@ const navigateTo = (section: string) => {
     }, 100);
   } else {
     console.error(`Section not found: ${section}`);
-  }
-};
-
-const scrollToForm = () => {
-  const el = document.getElementById('contact-form');
-  if (el) {
-    drawer.value = false;
-
-    setTimeout(() => {
-      const headerHeight = document.querySelector('.q-header')?.clientHeight || 0;
-
-      const elementPosition = el.getBoundingClientRect().top + window.pageYOffset;
-      const offsetPosition = elementPosition - headerHeight;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-
-      activeSection.value = 'contact-form';
-      console.log("Scrolled to contact form");
-    }, 100);
-  } else {
-    console.error("Contact form section not found");
   }
 };
 
