@@ -8,9 +8,7 @@ Rails.application.routes.draw do
 
   post 'contact_messages', to: 'contact_messages#create'
 
-  root to: 'application#frontend'
-
-  get '*path', to: 'application#frontend', constraints: ->(req) { !req.xhr? && req.format.html? }
+  root to: 'default#index'
 
   # Defines the root path route ("/")
   # root "posts#index"
