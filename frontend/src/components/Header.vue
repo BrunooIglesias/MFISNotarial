@@ -24,7 +24,7 @@
       </div>
 
       <div class="flex items-center space-x-2 sm:space-x-4">
-        <a href="tel:+123456789" class="hidden md:flex items-center text-notarial-text hover:text-notarial-subtext transition-colors duration-200">
+        <a href="tel:+59899943824" class="hidden md:flex items-center text-notarial-text hover:text-notarial-subtext transition-colors duration-200">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
           </svg>
@@ -102,49 +102,75 @@ const scrolled = ref(false);
 const activeSection = ref('home');
 
 const navItems = [
-  { label: 'Inicio', section: 'home' },
-  { label: 'Sobre Nosotros', section: 'about' },
-  { label: 'Servicios', section: 'services' },
+  { label: 'Inicio', section: 'hero-section' },
+  { label: 'Sobre Nosotros', section: 'about-section' },
+  { label: 'Servicios', section: 'services-section' },
   { label: 'Testimonios', section: 'testimonials' }
 ];
 
 const navigateTo = (section: string) => {
-  if (section === 'home') {
-    router.push('/');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    activeSection.value = 'home';
-  } else {
-    const el = document.getElementById(section);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
+  const el = document.getElementById(section);
+  if (el) {
+    drawer.value = false;
+
+    setTimeout(() => {
+      const headerHeight = document.querySelector('.q-header')?.clientHeight || 0;
+
+      const elementPosition = el.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - headerHeight;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+
       activeSection.value = section;
-    }
+      console.log(`Scrolled to section: ${section}`);
+    }, 100);
+  } else {
+    console.error(`Section not found: ${section}`);
   }
 };
 
 const scrollToForm = () => {
   const el = document.getElementById('contact-form');
   if (el) {
-    el.scrollIntoView({ behavior: 'smooth' });
-    activeSection.value = 'contact';
+    drawer.value = false;
+
+    setTimeout(() => {
+      const headerHeight = document.querySelector('.q-header')?.clientHeight || 0;
+
+      const elementPosition = el.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - headerHeight;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+
+      activeSection.value = 'contact-form';
+      console.log("Scrolled to contact form");
+    }, 100);
+  } else {
+    console.error("Contact form section not found");
   }
 };
 
 const callPhone = () => {
-  window.location.href = 'tel:+123456789';
+  window.location.href = 'tel:+59899943824';
 };
 
 const handleScroll = () => {
   scrolled.value = window.scrollY > 20;
 
-  const sections = ['home', 'about', 'services', 'testimonials', 'contact-form'];
+  const sections = ['hero-section', 'about-section', 'services-section', 'testimonials', 'contact-form'];
 
   for (const section of sections) {
-    const el = document.getElementById(section === 'home' ? 'hero-section' : section);
+    const el = document.getElementById(section);
     if (el) {
       const rect = el.getBoundingClientRect();
       if (rect.top <= 100 && rect.bottom >= 100) {
-        activeSection.value = section === 'contact-form' ? 'contact' : section === 'hero-section' ? 'home' : section;
+        activeSection.value = section;
         break;
       }
     }
