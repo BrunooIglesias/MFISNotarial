@@ -1,6 +1,14 @@
 const { defineConfig } = require('@vue/cli-service');
 
 module.exports = defineConfig({
+  devServer: {
+    proxy: {
+      '^/contact_messages': {
+        target: 'http://localhost:3000',
+        changeOrigin: true
+      }
+    }
+  },
   transpileDependencies: [
     'quasar'
   ],
