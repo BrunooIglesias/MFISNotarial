@@ -1,17 +1,15 @@
 [build]
-  command = "yarn build"
+  base = "frontend"
+  command = "yarn install && yarn build"
   publish = "dist"
 
 [build.environment]
   NODE_VERSION = "18"
   YARN_VERSION = "1.22.19"
   NPM_FLAGS = "--no-optional"
+  RUBY_VERSION = "3.2.3"
 
 [[redirects]]
   from = "/*"
   to = "/index.html"
-  status = 200
-
-[build.environment]
-  NODE_VERSION = "18"
-  YARN_VERSION = "1.22.19" 
+  status = 200 
