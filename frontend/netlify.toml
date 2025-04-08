@@ -2,6 +2,11 @@
   command = "yarn build"
   publish = "dist"
 
+[build.environment]
+  NODE_VERSION = "18"
+  YARN_VERSION = "1.22.19"
+  NPM_FLAGS = "--no-optional"
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
