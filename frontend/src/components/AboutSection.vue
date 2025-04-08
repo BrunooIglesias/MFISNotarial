@@ -1,5 +1,5 @@
 <template>
-  <section id="about" class="relative min-h-[calc(100vh-4rem)] bg-notarial-bg flex items-center">
+  <section id="about-section" class="relative min-h-[calc(100vh-4rem)] bg-notarial-bg flex items-center">
     <div class="relative max-w-7xl mx-auto px-6 lg:px-8 w-full">
       <div class="grid grid-cols-1 gap-16">
         <div class="text-center">

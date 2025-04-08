@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nuevo Interesado - <%= @name %></title>
+  <style>
+      body {
+          font-family: Arial, sans-serif;
+          background-color: #f9f9f9;
+          color: #333;
+          margin: 0;
+          padding: 0;
+      }
+      .container {
+          max-width: 600px;
+          margin: 20px auto;
+          background-color: #ffffff;
+          padding: 20px;
+          border-radius: 8px;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      }
+      .header {
+          background-color: #334155;
+          padding: 20px;
+          text-align: center;
+          color: #ffffff;
+          border-top-left-radius: 8px;
+          border-top-right-radius: 8px;
+      }
+      .header h1 {
+          margin: 0;
+          font-size: 22px;
+      }
+      .content {
+          padding: 20px;
+      }
+      .content p {
+          margin: 10px 0;
+          line-height: 1.6;
+      }
+      .details {
+          background-color: #f1f5f9;
+          padding: 15px;
+          border-radius: 6px;
+          margin: 20px 0;
+      }
+      .details h2 {
+          font-size: 18px;
+          color: #1e293b;
+          margin-bottom: 10px;
+      }
+      .details-list {
+          list-style-type: none;
+          padding-left: 0;
+      }
+      .details-list li {
+          margin-bottom: 8px;
+      }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>Nuevo mensaje desde el formulario de contacto</h1>
+  </div>
+
+  <div class="content">
+    <p>Hola Mary,</p>
+
+    <p>Recibiste un nuevo mensaje de alguien interesado en tus servicios. Estos son los detalles:</p>
+
+    <div class="details">
+      <h2>Datos del interesado</h2>
+      <ul class="details-list">
+        <li><strong>Nombre:</strong> <%= @name %></li>
+        <li><strong>Email:</strong> <%= @email %></li>
+        <li><strong>Celular:</strong> <%= @phone %></li>
+        <li><strong>Mensaje:</strong><br><%= simple_format(@message) %></li>
+      </ul>
+    </div>
+
+    <p>Podés responder directamente a este correo para ponerte en contacto.</p>
+
+    <p>Saludos,<br>Tu sitio web</p>
+  </div>
+</div>
+</body>
+</html>
