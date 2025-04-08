@@ -4,7 +4,7 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
         <div class="space-y-6">
           <div class="flex items-center">
-            <img :src="logo" alt="Logo" class="h-12 w-auto" />
+            <img :src="logo" alt="Logo" class="h-12 w-auto bg-white rounded-full" />
             <span class="ml-3 text-xl font-bold">Estudio Notarial</span>
           </div>
           <p class="text-notarial-bg/80 text-sm leading-relaxed">
@@ -34,7 +34,7 @@
               </a>
             </li>
             <li>
-              <a href="#contact-section" class="text-notarial-bg/80 hover:text-notarial-primary transition-colors flex items-center">
+              <a href="#contact" class="text-notarial-bg/80 hover:text-notarial-primary transition-colors flex items-center">
                 <span class="w-1.5 h-1.5 bg-notarial-primary rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></span>
                 Contacto
               </a>
@@ -52,7 +52,7 @@
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
               </div>
-              <span class="ml-3 text-notarial-bg/80 whitespace-nowrap">Colonia 1245, Ap 201, Montevideo (UY)</span>
+              <a href="https://www.google.com/maps/place/Escribana+Publica+Mary+Iglesias+Sosa/@-34.904794,-56.189369,15z/data=!4m6!3m5!1s0x959f812cc812a93b:0x3a3d475c5682f183!8m2!3d-34.9046979!4d-56.1893796!16s%2Fg%2F11tx4ydwky?entry=ttu&g_ep=EgoyMDI1MDQwMi4xIKXMDSoASAFQAw%3D%3D" target="_blank" class="ml-3 text-notarial-bg/80 hover:text-notarial-primary transition-colors">Colonia 1245, Ap 201</a>
             </li>
             <li class="flex items-start">
               <div class="flex-shrink-0 w-5 h-5 mt-1">

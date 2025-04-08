@@ -36,7 +36,7 @@
           </h1>
 
           <p class="text-base sm:text-lg text-notarial-bg/90 max-w-2xl font-light leading-relaxed">
-            Asesoramiento notarial integral para personas y empresas. Soluciones claras y profesionales adaptadas a tus necesidades. Más de <span class="font-medium">15 años</span> acompañando decisiones importantes.
+            Asesoramiento notarial integral para personas y empresas. Soluciones claras y profesionales adaptadas a tus necesidades. Más de <span class="font-medium">25 años</span> acompañando decisiones importantes.
           </p>
 
           <div class="pt-6 flex flex-col sm:flex-row gap-4">
@@ -99,7 +99,7 @@
           </div>
 
           <div class="absolute -top-6 -left-6 bg-notarial-bg text-notarial-text rounded-lg px-3 sm:px-4 py-2 sm:py-3 shadow-lg transform rotate-3 z-20 animate-float backdrop-blur-sm">
-            <p class="font-semibold text-sm sm:text-base">15+ años de experiencia</p>
+            <p class="font-semibold text-sm sm:text-base">25+ años de experiencia</p>
           </div>
         </div>
       </div>
