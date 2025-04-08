@@ -33,7 +33,7 @@
         <q-btn
             label="Contáctenos"
             class="bg-notarial-primary text-notarial-bg hover:bg-notarial-secondary transition-colors duration-300 shadow-md rounded-full text-xs sm:text-sm px-4 sm:px-6 py-2"
-            @click="scrollToForm"
+            @click="navigateTo('contact-form')"
         />
 
         <q-btn
