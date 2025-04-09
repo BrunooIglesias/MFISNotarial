@@ -159,6 +159,7 @@ const navigateTo = (section: string) => {
   const el = document.getElementById(section);
   if (el) {
     drawer.value = false;
+
     setTimeout(() => {
       const headerHeight =
           document.querySelector('.q-header')?.clientHeight || 0;
