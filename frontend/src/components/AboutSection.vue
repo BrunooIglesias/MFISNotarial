@@ -12,31 +12,31 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4 sm:px-6 md:px-8">
           <div class="bg-white p-6 rounded-2xl border border-notarial-light hover:border-notarial-primary transition-all duration-300 shadow-lg hover:shadow-xl">
             <div class="text-notarial-primary text-3xl sm:text-4xl mb-4">
-              <i class="fas fa-eye"></i>
+              <i class="fas fa-binoculars"></i>
             </div>
-            <h3 class="text-xl font-semibold text-notarial-subtext mb-3">Nuestra Visión</h3>
+            <h3 class="text-xl font-semibold text-notarial-subtext mb-3">Visión</h3>
             <p class="text-sm sm:text-base text-notarial-text leading-relaxed">
-              Ser el referente en servicios notariales, destacando por nuestra excelencia, profesionalismo y compromiso con cada cliente.
+              Ser un estudio de referencia por la confianza, el trato personalizado y la eficacia en cada gestión.
             </p>
           </div>
 
           <div class="bg-white p-6 rounded-2xl border border-notarial-light hover:border-notarial-primary transition-all duration-300 shadow-lg hover:shadow-xl">
             <div class="text-notarial-primary text-3xl sm:text-4xl mb-4">
-              <i class="fas fa-bullseye"></i>
+              <i class="fas fa-scroll"></i>
             </div>
-            <h3 class="text-xl font-semibold text-notarial-subtext mb-3">Nuestra Misión</h3>
+            <h3 class="text-xl font-semibold text-notarial-subtext mb-3">Misión</h3>
             <p class="text-sm sm:text-base text-notarial-text leading-relaxed">
-              Brindar asesoramiento legal de excelencia, garantizando claridad y confianza en cada paso del proceso notarial.
+              Brindar un servicio notarial cercano, transparente y profesional, con más de 25 años de experiencia al servicio de cada cliente.
             </p>
           </div>
 
           <div class="bg-white p-6 rounded-2xl border border-notarial-light hover:border-notarial-primary transition-all duration-300 shadow-lg hover:shadow-xl">
             <div class="text-notarial-primary text-3xl sm:text-4xl mb-4">
-              <i class="fas fa-handshake"></i>
+              <i class="fas fa-gem"></i>
             </div>
-            <h3 class="text-xl font-semibold text-notarial-subtext mb-3">Nuestros Valores</h3>
+            <h3 class="text-xl font-semibold text-notarial-subtext mb-3">Valores</h3>
             <p class="text-sm sm:text-base text-notarial-text leading-relaxed">
-              Integridad, profesionalismo y dedicación son los pilares que guían nuestro trabajo diario y nuestra relación con los clientes.
+              Profesionalismo, transparencia, eficiencia, cercanía y compromiso real con cada persona.
             </p>
           </div>
         </div>

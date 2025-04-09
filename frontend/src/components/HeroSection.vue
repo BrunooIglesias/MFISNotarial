@@ -94,7 +94,7 @@
                 class="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700"
             />
             <div class="absolute bottom-4 right-4 bg-notarial-bg/80 text-notarial-text text-xs px-3 py-1 rounded-full z-20 backdrop-blur-sm">
-              Estudio Iglesias © 2025
+              Escribana Mary Iglesias © 2025
             </div>
           </div>
 
